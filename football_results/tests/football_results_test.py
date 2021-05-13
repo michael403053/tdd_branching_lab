@@ -2,11 +2,7 @@ import unittest
 from src.football_results import *
 
 class FootballResultsTest(unittest.TestCase):
-
-
-
     
-
     def test_football_results__returns_home_win_string(self):
         score = {"home_score": 2, "away_score": 1}
         self.assertEqual("Home win", get_result(score))  
