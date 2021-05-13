@@ -4,6 +4,15 @@ from src.compound_interest import CompoundInterest
 
 class CompoundInterestTest(unittest.TestCase):
 
+    def test_compound_interest__100_returns_732(self):
+        investment = {
+            "principal": 100,
+            "rate": 10,
+            "years": 20
+        }
+
+        self.assertEqual(732.81, investment["principal"] * (1 + investment["rate"] / 1) ** (1 * investment["years"]))
+
     # Tests
 
     # Should return 732.81 given 100 principal, 10 percent, 20 years
