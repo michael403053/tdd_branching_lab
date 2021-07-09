@@ -7,11 +7,24 @@ class CompoundInterestTest(unittest.TestCase):
     def test_compound_interest__100_returns_732(self):
         investment = {
             "principal": 100,
-            "rate": 10,
-            "years": 20
+            "rate": 0.1,
+            "years": 20,
+            "per_year": 12, 
+            "investment_per_month": 1000
         }
 
-        self.assertEqual(732.81, investment["principal"] * (1 + investment["rate"] / 1) ** (1 * investment["years"]))
+        self.assertEqual(732.81, CompoundInterest.get_interest_total(investment))
+
+    def test_compound_interest__add_monthly_investment(self):
+        investment = {
+            "principal": 100,
+            "rate": 0.05,
+            "years": 10,
+            "per_year": 12, 
+            "investment_per_month": 1000
+        }
+
+        self.assertEqual(156093.99, CompoundInterest.get_interest_total_deposits(investment))
 
     # Tests
 
